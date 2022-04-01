@@ -5,28 +5,24 @@ Creare una funzione per capire se la parola inserita è palindroma
  */
 
 
-/* function palindroma(text) {
+
+function palindroma(word) {
     let text = '';
-    let verify = false;
-    for (let i = 0; i < text.length; i++) {
-        if (text[i] == text[text.length - i]) {
-            verify = true;
-        } else {
-            verify;
-        }
+    let backwardsText = '';
+
+    for (let i = 0; i < word.length; i++) {
+        text += word[i]
+        backwardsText += word[word.length - i - 1];
     }
-} */
+    console.log(`Parola letta da sx verso dx: ${text}`);
+    console.log(`Parola letta al contrario: ${backwardsText}`);
+
+    if (text == backwardsText) {
+        console.log(`La parola "${word}" è palindroma`);
+    } else {
+        console.log(`La parola "${word}" non è palindroma`);
+    }
+}
 
 let text = prompt('Inserisci una parola');
-let backwardsText = '';
-
-for (let i = 0; i < text.length; i++) {
-    backwardsText += text[text.length - i - 1];
-}
-
-if (text === backwardsText) {
-    console.log('la parola è palindroma');
-
-} else {
-    console.log('la parola NON è palindroma');
-}
+palindroma(text);
